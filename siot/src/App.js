@@ -7,8 +7,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-        SIOT Commute System 제발 되라  ㄴㅇㅅ !!!!!!!{/* 수정 필요 */}
-
+        SIOT  !!!!!!!{/* 수정 필요 */}
+        이것도 되면 대박 안되네...ㅇㅇㅇ ㅈㅂㅈㅂㅈㅂㅈㅂ
         </p>
         <a
           className="App-link"
