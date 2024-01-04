@@ -1,12 +1,27 @@
+# version: "3.2"
+# services:
+#   frontend:
+#     restart: always
+#     command : npm start
+#     container_name: siot_container
+#     build:
+#       context: ./siot/
+#       dockerfile: Dockerfile
+#     ports:
+#       - "3000:3000"
+#     stdin_open: true
+
+
+
 version: "3.2"
 services:
   frontend:
     restart: always
-    command : npm start
-    container_name: siot_container
     build:
       context: ./siot/
       dockerfile: Dockerfile
+    container_name: siot_container
     ports:
       - "3000:3000"
     stdin_open: true
+

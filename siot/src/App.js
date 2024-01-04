@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> SIOT Commute System {/* 수정 필요 */}
+        SIOT Commute System 제발 되라  ㄴㅇㅅ !!!!!!!{/* 수정 필요 */}
 
         </p>
         <a
