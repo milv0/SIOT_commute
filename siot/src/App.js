@@ -1,12 +1,17 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+
 import MainPage from './pages/MainPage';
 import AttendancePage from './pages/AttendancePage';
 import SignupPage from './pages/SignupPage';
 
+import SlackMessageButton from './components/SlackMessageButton';
+
 const App = () => {
   return (
+    <div>
     <Router>
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -14,7 +19,15 @@ const App = () => {
         <Route path="/attendance" element={<AttendancePage />} />
       </Routes>
     </Router>
+
+    <SlackMessageButton />
+
+    </div>
+    
+    
   );
 };
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App;

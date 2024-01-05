@@ -1,6 +1,6 @@
 // src/pages/MainPage.js
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LoginForm from '../components/LoginForm';
 
 const MainPage = () => {

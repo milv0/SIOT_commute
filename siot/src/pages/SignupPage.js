@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import MainPage from './MainPage';
+import { Link } from 'react-router-dom';
+// import MainPage from './MainPage';
 import SignupForm from '../components/SignUpForm';
 
 const SignupPage = () => {
