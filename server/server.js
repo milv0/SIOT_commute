@@ -1,14 +1,16 @@
 const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 const PORT = 3001;
+app.use(cors());  // 모든 경로에 대해 CORS 허용
 
 app.use(bodyParser.json());
 
 app.post('/send-to-slack', async (req, res) => {
-  const SLACK_WEBHOOK_URL = 'https://hooks.slack.com/services/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';
+  const SLACK_WEBHOOK_URL = 'SIOT-Commute App URL';
 
   const headers = {
     'Content-Type': 'application/json',
