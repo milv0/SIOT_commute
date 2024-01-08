@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 const SignupForm = ({ onFormSubmit, toggleAuthMode }) => {
   const [userId, setId] = useState('');
@@ -36,6 +38,8 @@ const SignupForm = ({ onFormSubmit, toggleAuthMode }) => {
       });
 
       console.log('Signup success:', response.data);
+      // 회원가입 성공 시 팝업 띄우기
+      toast.success('회원가입 성공!', { autoClose: 700 });
 
       // 성공적으로 회원가입되면, 부모 컴포넌트에서 전달한 onFormSubmit 함수 호출
       onFormSubmit(userId, password, true);
@@ -74,6 +78,8 @@ const SignupForm = ({ onFormSubmit, toggleAuthMode }) => {
         <br /> <br />
         <button type="submit">회원가입</button>
       </form>
+      <ToastContainer />
+
     </div>
   );
 };
