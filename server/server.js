@@ -10,7 +10,7 @@ app.use(cors());  // 모든 경로에 대해 CORS 허용
 app.use(bodyParser.json());
 
 app.post('/send-to-slack', async (req, res) => {
-  const SLACK_WEBHOOK_URL = 'aaa';
+  const SLACK_WEBHOOK_URL = 'ㅁㅁㅁㅁㅁㅁ';
 
   const headers = {
     'Content-Type': 'application/json',
