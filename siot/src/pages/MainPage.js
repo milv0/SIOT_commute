@@ -11,11 +11,11 @@ const MainPage = () => {
       <div>
         <LoginForm />
       </div>
-    {/* 페이지 이동 링크 */}
-    <br/> <br/> <br/>
+    {/* 페이지 이동 링크 */}<br/>
       <div>
         <Link to="/signup">회원가입</Link>
       </div>
+      <br/><br/>
       <div>
         <Link to="/attendance">Attendance Page</Link>
       </div>
