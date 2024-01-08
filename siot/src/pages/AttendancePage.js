@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import AttendanceForm from '../components/AttendanceForm';
-
 const AttendancePage = () => {
   return (
     <div>
@@ -10,6 +9,7 @@ const AttendancePage = () => {
         <Link to="/">Main Page</Link>
       </div>
       <AttendanceForm />
+
     </div>
   );
 };
