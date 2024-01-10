@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '/Users/brianmg/SIOT_commute/siot/src/css/AttendanceForm.css'; // 스타일 파일 추가
@@ -42,7 +41,7 @@ const AttendanceForm = () => {
     setAttendanceLog([...attendanceLog, logMessage]);
 
     // Send message to Slack
-    await handleSendMessage(logMessage);
+    await sendMessageToSlack(logMessage);
 
     // 출근 또는 퇴근 상태 업데이트
     setEmployeeStates((prevStates) => ({
@@ -53,7 +52,7 @@ const AttendanceForm = () => {
     // Toast 메시지 띄우기
     toast.success(`${employee.name}님, ${isClockedIn ? '퇴근' : '출근'}되었습니다.`, {
       position: 'top-right',
-      autoClose: 1000,
+      autoClose: 700,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -61,12 +60,20 @@ const AttendanceForm = () => {
     });
   };
 
-  const handleSendMessage = async (msg) => {
+  const sendMessageToSlack = async (message) => {
     try {
-      await axios.post('http://localhost:3001/send-to-slack', { text: msg });
-      console.log('Message sent to Slack');
+      const response = await fetch('https://glo449sd2j.execute-api.us-west-1.amazonaws.com/default/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ text: message }),
+      });
+
+      const result = await response.json();
+      console.log('Lambda에서의 결과:', result);
     } catch (error) {
-      console.error('Failed to send message to Slack:', error);
+      console.error('메시지 전송 중 오류 발생:', error);
     }
   };
 

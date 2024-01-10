@@ -17,9 +17,12 @@ const MainPage = () => {
       <br/><br/>
       <div>
         <Link to="/attendance">Attendance Page</Link>
-      </div>
+      </div>     
+       <br/><br/>
+
       <div>
-       
+        <Link to="/slack">Slack Page</Link>
+
       </div>
     </div>
 

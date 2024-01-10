@@ -6,10 +6,8 @@ import ReactDOM from 'react-dom';
 import MainPage from './pages/MainPage';
 import AttendancePage from './pages/AttendancePage';
 import SignupPage from './pages/SignupPage';
+import SlackPage from './pages/SlackPage';
 
-import SlackMessageButton from './components/SlackMessageButton';
-
-// import Slack from './components/slack';
 const App = () => {
   return (
     <div>
@@ -18,13 +16,10 @@ const App = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/attendance" element={<AttendancePage />} />
+        <Route path='/slack' element={<SlackPage />} />
       </Routes>
     </Router>
-    <SlackMessageButton />
-
-    {/* <Slack/> */}
     </div>
-    
     
   );
 };
