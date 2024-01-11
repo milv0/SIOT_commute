@@ -31,7 +31,7 @@ const handleFormSubmit = (id, password, success) => {
 return (
   <div>
     <div>
-     <Link to="/">MainPage</Link>
+     <Link to="/main">MainPage</Link>
     </div>  
     {/* SignupForm 컴포넌트에 handleFormSubmit 함수를 onFormSubmit prop으로 전달 */}
     <SignupForm onFormSubmit={handleFormSubmit} />

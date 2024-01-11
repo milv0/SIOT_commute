@@ -16,7 +16,7 @@ const MainPage = () => {
       </div>
       <br/><br/>
       <div>
-        <Link to="/attendance">Attendance Page</Link>
+        <Link to="/">Attendance Page</Link>
       </div>     
        <br/><br/>
 

@@ -6,7 +6,7 @@ const SlackPage = () => {
   return (
     <div>
       <div>
-        <Link to="/">Main Page</Link>
+        <Link to="/main">Main Page</Link>
       </div> <br/>
       <SlackIntegration />
 

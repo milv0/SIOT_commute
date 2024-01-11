@@ -89,65 +89,157 @@ const AttendanceForm = () => {
   ];
 
   return (
-    <div className="container mt-5">
-      <h1 className="mb-4">SIOT 출퇴근 시스템</h1>
 
-      {/* 인원 선택 버튼 */}
-      <div className="btn-group">
-        {employees.map((employee) => (
-          <div key={employee.id} className="btn-group me-2">
+<div className="container mt-5">
+  <h1 className="mb-4">SIOT 출퇴근 시스템</h1>
+
+  <div className="row">
+    <div className="col-md-6">
+      {employees.slice(0, Math.ceil(employees.length / 2)).map((employee, index) => (
+        <div key={employee.id} className="mb-3">
+          <button
+            type="button"
+            className={`btn btn-secondary  ${
+              employeeStates[employee.id] === 'in' ? 'active' : ''
+            }`}
+            onClick={() => handleClockInOut(employee)}
+            disabled={employeeStates[employee.id] === 'in'}
+          >
+            {employee.name}
+          </button> 
+          {employeeStates[employee.id] === 'in' && (
             <button
               type="button"
-              className={`btn btn-outline-primary ${employeeStates[employee.id] === 'in' ? 'active' : ''}`}
+              className="btn btn-danger ml-2"
               onClick={() => handleClockInOut(employee)}
-              disabled={employeeStates[employee.id] === 'in'}
             >
-              {employee.name}
+              퇴근
             </button>
-            {employeeStates[employee.id] === 'in' && (
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={() => handleClockInOut(employee)}
-              >
-                퇴근
-              </button>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* 출퇴근 기록 */}
-      <div className="row mt-4">
-        <div className="col-md-6">
-          <h2>출근 기록</h2>
-          <ul className="list-group">
-            {attendanceLog
-              .filter((log) => log.includes('출근'))
-              .map((log, index) => (
-                <li key={index} className="list-group-item">
-                  {log}
-                </li>
-              ))}
-          </ul>
+          )}
         </div>
-        <div className="col-md-6">
-          <h2>퇴근 기록</h2>
-          <ul className="list-group">
-            {attendanceLog
-              .filter((log) => log.includes('퇴근'))
-              .map((log, index) => (
-                <li key={index} className="list-group-item">
-                  {log}
-                </li>
-              ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Toast 컨테이너 */}
-      <ToastContainer />
+      ))}
     </div>
+    <div className="col-md-6">
+      {employees.slice(Math.ceil(employees.length / 2)).map((employee, index) => (
+        <div key={employee.id} className="mb-3">
+          <button
+            type="button"
+            className={`btn btn-secondary ${
+              employeeStates[employee.id] === 'in' ? 'active' : ''
+            }`}
+            onClick={() => handleClockInOut(employee)}
+            disabled={employeeStates[employee.id] === 'in'}
+          >
+            {employee.name}
+          </button>
+          {employeeStates[employee.id] === 'in' && (
+            <button
+              type="button"
+              className="btn btn-danger ml-2"
+              onClick={() => handleClockInOut(employee)}
+            >
+              퇴근
+            </button>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div className="row mt-4">
+    <div className="col-md-6">
+      <h2>출근 기록</h2>
+      <ul className="list-group">
+        {attendanceLog
+          .filter((log) => log.includes('출근'))
+          .map((log, index) => (
+            <li key={index} className="list-group-item">
+              {log}
+            </li>
+          ))}
+      </ul>
+    </div>
+    <div className="col-md-6">
+      <h2>퇴근 기록</h2>
+      <ul className="list-group">
+        {attendanceLog
+          .filter((log) => log.includes('퇴근'))
+          .map((log, index) => (
+            <li key={index} className="list-group-item">
+              {log}
+            </li>
+          ))}
+      </ul>
+    </div>
+  </div>
+
+  {/* Toast 컨테이너 */}
+  <ToastContainer />
+</div>
+
+
+
+
+  
+    // <div className="container mt-5">
+    //   <h1 className="mb-4">SIOT 출퇴근 시스템</h1>
+
+    //   {/* 인원 선택 버튼 */}
+    //   <div className="btn-group">
+    //     {employees.map((employee) => (
+    //       <div key={employee.id} className="btn-group me-2">
+    //         <button
+    //           type="button"
+    //           className={`btn btn-outline-primary ${employeeStates[employee.id] === 'in' ? 'active' : ''}`}
+    //           onClick={() => handleClockInOut(employee)}
+    //           disabled={employeeStates[employee.id] === 'in'}
+    //         >
+    //           {employee.name}
+    //         </button>
+    //         {employeeStates[employee.id] === 'in' && (
+    //           <button
+    //             type="button"
+    //             className="btn btn-secondary"
+    //             onClick={() => handleClockInOut(employee)}
+    //           >
+    //             퇴근
+    //           </button>
+    //         )}
+    //       </div>
+    //     ))}
+    //   </div>
+
+    //   {/* 출퇴근 기록 */}
+    //   <div className="row mt-4">
+    //     <div className="col-md-6">
+    //       <h2>출근 기록</h2>
+    //       <ul className="list-group">
+    //         {attendanceLog
+    //           .filter((log) => log.includes('출근'))
+    //           .map((log, index) => (
+    //             <li key={index} className="list-group-item">
+    //               {log}
+    //             </li>
+    //           ))}
+    //       </ul>
+    //     </div>
+    //     <div className="col-md-6">
+    //       <h2>퇴근 기록</h2>
+    //       <ul className="list-group">
+    //         {attendanceLog
+    //           .filter((log) => log.includes('퇴근'))
+    //           .map((log, index) => (
+    //             <li key={index} className="list-group-item">
+    //               {log}
+    //             </li>
+    //           ))}
+    //       </ul>
+    //     </div>
+    //   </div>
+
+    //   {/* Toast 컨테이너 */}
+    //   <ToastContainer />
+    // </div>
   );
 };
 
