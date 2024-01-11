@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import '/Users/brianmg/SIOT_commute/siot/src/css/AttendanceForm.css'; // 스타일 파일 추가
 
 const AttendanceForm = () => {
   const [attendanceLog, setAttendanceLog] = useState([]);
