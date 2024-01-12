@@ -1,9 +1,5 @@
 # SIOT_commute
 
-## Project Description
-
-Briefly describe your project and its purpose.
-
 ## Prerequisites
 
 Make sure you have the following installed on your machine:
