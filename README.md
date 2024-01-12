@@ -1,7 +1,5 @@
 # SIOT_commute
 
-# Your React Project Name
-
 ## Project Description
 
 Briefly describe your project and its purpose.
@@ -20,12 +18,12 @@ Make sure you have the following installed on your machine:
    ```bash
    git clone https://github.com/your-username/your-react-project.git
 
-Navigate to the project directory:
+2. Navigate to the project directory:
 
+   ```bash
+   cd your-react-project
 
-cd your-react-project
+3. Install dependencies:
 
-Install dependencies:
-
-
-npm install
+   ```bash
+   npm install
