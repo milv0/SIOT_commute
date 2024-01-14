@@ -61,7 +61,7 @@ const AttendanceForm = () => {
 
   const sendMessageToSlack = async (message) => {
     try {
-      const response = await fetch('https://glo449sd2j.execute-api.us-west-1.amazonaws.com/default/', {
+      const response = await fetch('YOUR_API_GATEWAY_URL', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -176,70 +176,6 @@ const AttendanceForm = () => {
   {/* Toast 컨테이너 */}
   <ToastContainer />
 </div>
-
-
-
-
-  
-    // <div className="container mt-5">
-    //   <h1 className="mb-4">SIOT 출퇴근 시스템</h1>
-
-    //   {/* 인원 선택 버튼 */}
-    //   <div className="btn-group">
-    //     {employees.map((employee) => (
-    //       <div key={employee.id} className="btn-group me-2">
-    //         <button
-    //           type="button"
-    //           className={`btn btn-outline-primary ${employeeStates[employee.id] === 'in' ? 'active' : ''}`}
-    //           onClick={() => handleClockInOut(employee)}
-    //           disabled={employeeStates[employee.id] === 'in'}
-    //         >
-    //           {employee.name}
-    //         </button>
-    //         {employeeStates[employee.id] === 'in' && (
-    //           <button
-    //             type="button"
-    //             className="btn btn-secondary"
-    //             onClick={() => handleClockInOut(employee)}
-    //           >
-    //             퇴근
-    //           </button>
-    //         )}
-    //       </div>
-    //     ))}
-    //   </div>
-
-    //   {/* 출퇴근 기록 */}
-    //   <div className="row mt-4">
-    //     <div className="col-md-6">
-    //       <h2>출근 기록</h2>
-    //       <ul className="list-group">
-    //         {attendanceLog
-    //           .filter((log) => log.includes('출근'))
-    //           .map((log, index) => (
-    //             <li key={index} className="list-group-item">
-    //               {log}
-    //             </li>
-    //           ))}
-    //       </ul>
-    //     </div>
-    //     <div className="col-md-6">
-    //       <h2>퇴근 기록</h2>
-    //       <ul className="list-group">
-    //         {attendanceLog
-    //           .filter((log) => log.includes('퇴근'))
-    //           .map((log, index) => (
-    //             <li key={index} className="list-group-item">
-    //               {log}
-    //             </li>
-    //           ))}
-    //       </ul>
-    //     </div>
-    //   </div>
-
-    //   {/* Toast 컨테이너 */}
-    //   <ToastContainer />
-    // </div>
   );
 };
 
