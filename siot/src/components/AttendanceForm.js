@@ -86,6 +86,7 @@ const AttendanceForm = () => {
     { id: 6, name: '강성은' },
     { id: 7, name: '고명환' },
     { id: 8, name: '곽윤석' },
+    { id: 9, name: '김성민'}
   ];
 
   return (
