@@ -95,33 +95,10 @@ const AttendanceForm = () => {
   <h1 className="mb-4">SIOT 출퇴근 시스템</h1>
 
   <div className="row">
-    <div className="col-md-6">
-      {employees.slice(0, Math.ceil(employees.length / 2)).map((employee, index) => (
-        <div key={employee.id} className="mb-3">
-          <button
-            type="button"
-            className={`btn btn-secondary  ${
-              employeeStates[employee.id] === 'in' ? 'active' : ''
-            }`}
-            onClick={() => handleClockInOut(employee)}
-            disabled={employeeStates[employee.id] === 'in'}
-          >
-            {employee.name}
-          </button> 
-          {employeeStates[employee.id] === 'in' && (
-            <button
-              type="button"
-              className="btn btn-danger ml-2"
-              onClick={() => handleClockInOut(employee)}
-            >
-              퇴근
-            </button>
-          )}
-        </div>
-      ))}
-    </div>
-    <div className="col-md-6">
-      {employees.slice(Math.ceil(employees.length / 2)).map((employee, index) => (
+  <div className="col-md-6">
+    {employees
+      .filter((employee) => employee.id % 2 !== 0)
+      .map((employee, index) => (
         <div key={employee.id} className="mb-3">
           <button
             type="button"
@@ -144,8 +121,36 @@ const AttendanceForm = () => {
           )}
         </div>
       ))}
-    </div>
   </div>
+  <div className="col-md-6">
+    {employees
+      .filter((employee) => employee.id % 2 === 0)
+      .map((employee, index) => (
+        <div key={employee.id} className="mb-3">
+          <button
+            type="button"
+            className={`btn btn-secondary ${
+              employeeStates[employee.id] === 'in' ? 'active' : ''
+            }`}
+            onClick={() => handleClockInOut(employee)}
+            disabled={employeeStates[employee.id] === 'in'}
+          >
+            {employee.name}
+          </button>
+          {employeeStates[employee.id] === 'in' && (
+            <button
+              type="button"
+              className="btn btn-danger ml-2"
+              onClick={() => handleClockInOut(employee)}
+            >
+              퇴근
+            </button>
+          )}
+        </div>
+      ))}
+  </div>
+</div>
+
 
   <div className="row mt-4">
     <div className="col-md-6">
