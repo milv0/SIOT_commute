@@ -1,14 +1,14 @@
 // src/App.js
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
-import ReactDOM from 'react-dom';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { Navbar, Nav } from "react-bootstrap";
+import ReactDOM from "react-dom";
 
-import MainPage from './pages/MainPage';
-import AttendancePage from './pages/AttendancePage';
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
-import SlackPage from './pages/SlackPage';
+import MainPage from "./pages/MainPage";
+import AttendancePage from "./pages/AttendancePage";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import SlackPage from "./pages/SlackPage";
 
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,9 +19,18 @@ const App = () => {
 
   return (
     <div>
-      <Router> {/* Wrap the entire App with Router */}
+      <Router>
+        {" "}
+        {/* Wrap the entire App with Router */}
         <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="/">SIOT Lab Website</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img
+              src={process.env.PUBLIC_URL + "img/siot-logo.jpeg"}
+              alt="SIOT Lab Logo"
+              height="30" // Adjust the height as needed
+              className="d-inline-block align-top"
+            />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
@@ -40,7 +49,10 @@ const App = () => {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
+        <h2 className="text-primary mt-4 mb-2">Welcome to the Smart I.O.T Lab</h2>
+        <h3 className=" mb-4">
+          Kyonggi Univrsity Smart Internet of Things Laboratory
+        </h3>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -53,6 +65,6 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 export default App;
