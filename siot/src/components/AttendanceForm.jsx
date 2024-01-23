@@ -74,7 +74,7 @@ const AttendanceForm = () => {
   const sendMessageToSlack = async (message) => {
     try {
       const response = await fetch(
-        "https://glo449sd2j.execute-api.us-west-1.amazonaws.com/default/",
+        process.env.REACT_APP_SEND_SLACK_API_GATEWAY_URL,
         {
           method: "POST",
           headers: {

@@ -7,7 +7,7 @@ const SlackIntegration = () => {
 
   const sendMessageToSlack = async () => {
     try {
-      const response = await fetch('https://glo449sd2j.execute-api.us-west-1.amazonaws.com/default/', {
+      const response = await fetch(process.env.REACT_APP_SEND_SLACK_API_GATEWAY_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

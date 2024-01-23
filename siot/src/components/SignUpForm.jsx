@@ -32,7 +32,7 @@ const SignupForm = ({ onFormSubmit, toggleAuthMode }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.put('https://sqkdwk2ce6.execute-api.us-west-1.amazonaws.com/users', {
+      const response = await axios.put(process.env.REACT_APP_SIGNUP_API_GATEWAY_URL, {
         userId,
         name,
         email,
@@ -103,6 +103,7 @@ const SignupForm = ({ onFormSubmit, toggleAuthMode }) => {
         </Form>
       </Col>
     </Row>
+    <ToastContainer />
   </Container>
 );
 };

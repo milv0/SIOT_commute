@@ -49,10 +49,7 @@ const App = () => {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <h2 className="text-primary mt-4 mb-2">Welcome to the Smart I.O.T Lab</h2>
-        <h3 className=" mb-4">
-          Kyonggi Univrsity Smart Internet of Things Laboratory
-        </h3>
+
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
