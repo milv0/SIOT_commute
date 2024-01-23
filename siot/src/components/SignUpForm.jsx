@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import { Container, Form, Button, Row, Col ,  Navbar, Nav} from "react-bootstrap";
+
 
 const SignupForm = ({ onFormSubmit, toggleAuthMode }) => {
   const [userId, setId] = useState('');
@@ -30,7 +32,7 @@ const SignupForm = ({ onFormSubmit, toggleAuthMode }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.put('YOUR_API_GATEWAY_URL', {
+      const response = await axios.put('https://sqkdwk2ce6.execute-api.us-west-1.amazonaws.com/users', {
         userId,
         name,
         email,
@@ -50,38 +52,59 @@ const SignupForm = ({ onFormSubmit, toggleAuthMode }) => {
   };
 
   return (
-    <div>
-      <h1>회원가입</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={name} onChange={handleNameChange} />
-        </label>
-        <br />
+    <Container>
+    <Row className="justify-content-center">
+      <Col xs={12} md={6}>
+        <h1 className="mt-4 mb-4 text-center">회원가입</h1>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group controlId="formName" className="mt-3">
+            <Form.Label>이름:</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={handleNameChange}
+            />
+          </Form.Group>
 
-        <label>
-          Email:
-          <input type="email" value={email} onChange={handleEmailChange} />
-        </label>
-        <br />
+          <Form.Group controlId="formEmail" className="mt-3">
+            <Form.Label>이메일:</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </Form.Group>
 
-        <label>
-          ID:
-          <input type="text" value={userId} onChange={handleIdChange} />
-        </label>
-        <br />
+          <Form.Group controlId="formUserId" className="mt-3">
+            <Form.Label>ID:</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your ID"
+              value={userId}
+              onChange={handleIdChange}
+            />
+          </Form.Group>
 
-        <label>
-          Password:
-          <input type="password" value={password} onChange={handlePasswordChange} />
-        </label>
-        <br /> <br />
-        <button type="submit">회원가입</button>
-      </form>
-      <ToastContainer />
+          <Form.Group controlId="formPassword" className="mt-3">
+            <Form.Label>Password:</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </Form.Group>
 
-    </div>
-  );
+          <Button variant="primary" type="submit" className="mt-3">
+            회원가입
+          </Button>
+        </Form>
+      </Col>
+    </Row>
+  </Container>
+);
 };
 
 export default SignupForm;

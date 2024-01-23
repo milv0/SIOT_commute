@@ -1,31 +1,22 @@
 // src/pages/MainPage.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import LoginForm from '../components/LoginForm';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+// Navbar 컴포넌트 추가
+import { Navbar, Nav } from "react-bootstrap";
+
+
+
 const MainPage = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div>
-      <h1>SIOT Lab 출퇴근</h1>
-    
-      <div>
-        <LoginForm />
-      </div>
-    {/* 페이지 이동 링크 */}<br/>
-      <div>
-        <Link to="/signup">회원가입</Link>
-      </div>
-      <br/><br/>
-      <div>
-        <Link to="/">Attendance Page</Link>
-      </div>     
-       <br/><br/>
 
-      <div>
-        <Link to="/slack">Slack Page</Link>
-
-      </div>
     </div>
-
   );
 };
 

@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // import MainPage from './MainPage';
-import SignupForm from "../components/SignUpForm";
+import LoginForm from "../components/LoginForm";
 
-const SignupPage = () => {
+const LoginPage = () => {
   return (
     <div>
 
-      <SignupForm/>
+      <LoginForm/>
     </div>
   );
 };
 
-export default SignupPage;
+export default LoginPage;

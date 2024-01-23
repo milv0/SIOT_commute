@@ -5,9 +5,7 @@ import AttendanceForm from '../components/AttendanceForm';
 const AttendancePage = () => {
   return (
     <div>
-      <div>
-        <Link to="/main">Main Page</Link> 
-      </div>
+
       <AttendanceForm />
 
     </div>
