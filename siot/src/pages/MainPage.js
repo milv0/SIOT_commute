@@ -6,8 +6,22 @@ const MainPage = () => {
   return (
     <div style={{ marginLeft: "50px", marginRight: "50px" }}>
       <br></br>
+
       <Accordion defaultActiveKey={["0"]} alwaysOpen>
         <Accordion.Item eventKey="0">
+          <Accordion.Header className="accordion-header">
+            <div style={{ fontWeight: "bold" }}>
+              {" "}
+              Welcome to the Smart I.O.T Lab
+            </div>
+          </Accordion.Header>
+          <Accordion.Body className="accordion-body">
+            Kyonggi University Smart Internet of Things Laboratory<br></br>
+            <br></br>경기대학교 스마트 사물인터넷 연구실
+          </Accordion.Body>
+        </Accordion.Item>
+        <br></br> <br></br> <br></br>
+        <Accordion.Item eventKey="1">
           <Accordion.Header className="accordion-header">
             연구실 소개 Laboratory introduction
           </Accordion.Header>
@@ -35,15 +49,6 @@ const MainPage = () => {
             <div style={{ fontWeight: "bold" }}>
               문은 두드리는 사람에게만 열릴 것입니다. :)
             </div>
-          </Accordion.Body>
-        </Accordion.Item>
-        <br></br> <br></br> <br></br>
-        <Accordion.Item eventKey="1">
-          <Accordion.Header className="accordion-header">
-            Accordion Item #2
-          </Accordion.Header>
-          <Accordion.Body className="accordion-body">
-            공백. .////
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

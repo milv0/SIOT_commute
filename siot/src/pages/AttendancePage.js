@@ -7,7 +7,7 @@ const AttendancePage = () => {
     <div>
       <div style={{ marginLeft: "125px" }}>
         <br></br>
-        <h3>문의 사항</h3>
+        <h3>출퇴근 기록 수정 요청란</h3>
         <SlackIntegration />
       </div>
       <AttendanceForm />
