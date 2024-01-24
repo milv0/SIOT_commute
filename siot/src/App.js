@@ -4,12 +4,16 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Navbar, Nav } from "react-bootstrap";
 import ReactDOM from "react-dom";
 
+
+
 import MainPage from "./pages/MainPage";
 import AttendancePage from "./pages/AttendancePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import SlackPage from "./pages/SlackPage";
 import CardPage from "./pages/CardPage"
+import Footer from './components/Footer'; // 푸터 컴포넌트 import
+
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -61,6 +65,7 @@ const App = () => {
 
         </Routes>
       </Router>
+
     </div>
   );
 };

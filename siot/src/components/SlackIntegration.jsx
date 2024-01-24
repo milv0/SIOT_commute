@@ -22,7 +22,9 @@ const SlackIntegration = () => {
   };
 
   return (
-    <div>
+    <div className='container mt-5 text-center'>
+      <h2>출퇴근 기록 수정 사항 요청</h2>
+      <br></br>
       <input
         type="text"
         value={message}

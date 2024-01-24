@@ -103,8 +103,9 @@ const AttendanceForm = () => {
 
   return (
 
-    <div className="container mt-5">
+    // <div className="container mt-5" >
     
+    <div className="container mt-5 text-center"> {/* text-center 클래스 추가 */}
       <h1 className="mb-4">SIOT 출퇴근 시스템</h1>
 
       <div className="row">
