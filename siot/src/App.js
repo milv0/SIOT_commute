@@ -9,7 +9,7 @@ import AttendancePage from "./pages/AttendancePage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import SlackPage from "./pages/SlackPage";
-
+import CardPage from "./pages/CardPage"
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -45,6 +45,9 @@ const App = () => {
               <Nav.Link as={Link} to="/slack" onClick={toggleMenu}>
                 Slack Page
               </Nav.Link>
+              <Nav.Link as={Link} to="/card" onClick={toggleMenu}>
+               상세 페이지
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -54,6 +57,8 @@ const App = () => {
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/attendance" element={<AttendancePage />} />
           <Route path="/slack" element={<SlackPage />} />
+          <Route path="/card" element={<CardPage />} />
+
         </Routes>
       </Router>
     </div>

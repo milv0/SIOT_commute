@@ -1,2 +1,14 @@
 /* src/moin.css*/
 
+.accordion-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
+  .accordion-body {
+    font-size: 1em;
+    line-height: 1.6;
+    padding: 10px;
+  }
+  
