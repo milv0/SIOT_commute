@@ -33,7 +33,7 @@ const MainPage = () => {
             학생들에게 문의 바랍니다.<br></br>
             <br></br>
             <div style={{ fontWeight: "bold" }}>
-              문은 두드리는 사람에게만 열릴 것입니다.
+              문은 두드리는 사람에게만 열릴 것입니다. :)
             </div>
           </Accordion.Body>
         </Accordion.Item>

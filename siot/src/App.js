@@ -42,9 +42,9 @@ const App = () => {
               <Nav.Link as={Link} to="/attendance" onClick={toggleMenu}>
                 출퇴근
               </Nav.Link>
-              <Nav.Link as={Link} to="/slack" onClick={toggleMenu}>
+              {/* <Nav.Link as={Link} to="/slack" onClick={toggleMenu}>
                 Slack Page
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link as={Link} to="/card" onClick={toggleMenu}>
                상세 페이지
               </Nav.Link>

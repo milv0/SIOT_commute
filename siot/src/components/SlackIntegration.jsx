@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Container, Form, Button, Row, Col ,  Navbar, Nav} from "react-bootstrap";
 
 // Lambda로 Slack Message 전송
 const SlackIntegration = () => {

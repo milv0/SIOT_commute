@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
-import { Container, Form, Button, Row, Col,  Navbar, Nav  } from "react-bootstrap";
+// import { ToastContainer, toast } from "react-toastify";
+import { Container, Form, Button, Row, Col } from "react-bootstrap";
 
 const LoginForm = ({ onFormSubmit, toggleAuthMode }) => {
   const [id, setId] = useState("");

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { ToastContainer, toast, Navbar, Nav } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AttendanceForm = () => {
   const [attendanceLog, setAttendanceLog] = useState([]);
   const [employeeStates, setEmployeeStates] = useState({});
-  const [menuOpen, setMenuOpen] = useState(false);
 
   // 새로 고침 창 한번 막기
   useEffect(() => {
@@ -22,10 +21,6 @@ const AttendanceForm = () => {
     };
   }, []);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-  
   const getCurrentDateTime = () => {
     const now = new Date();
     const currentDate = now.toLocaleDateString();

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
-import { Container, Form, Button, Row, Col ,  Navbar, Nav} from "react-bootstrap";
+import { Container, Form, Button, Row, Col} from "react-bootstrap";
 
 
 const SignupForm = ({ onFormSubmit, toggleAuthMode }) => {
