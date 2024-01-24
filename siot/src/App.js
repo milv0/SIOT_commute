@@ -13,6 +13,7 @@ import SlackPage from "./pages/SlackPage";
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -20,8 +21,6 @@ const App = () => {
   return (
     <div>
       <Router>
-        {" "}
-        {/* Wrap the entire App with Router */}
         <Navbar bg="light" expand="lg">
           <Navbar.Brand href="/">
             <img
@@ -49,7 +48,6 @@ const App = () => {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
